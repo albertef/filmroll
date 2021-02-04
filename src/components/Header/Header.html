@@ -1,0 +1,11 @@
+<header class="row" :class="$style.header">
+  <section class="col-2 p-3 text-center" :class="$style.logoWrapper">
+      <font-awesome-icon icon="film" /><h3>FILMROLL</h3>
+  </section>
+  <section class="col-10 pl-4" :class="$style.searchWrapper">
+      <div>
+        <font-awesome-icon icon="search" />
+        <input type="text" v-on:keyup="e => updateSearch(e)" placeholder="Search Movies..." :value="value">
+      </div>
+  </section>
+</header>

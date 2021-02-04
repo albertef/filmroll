@@ -1,0 +1,50 @@
+
+.header {
+  background: #FF424F;
+  h3 {
+    
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: #FFF;
+    display: inline-block;
+  }
+  svg {
+    font-size: 1.1rem;
+    margin-top: 3px;
+    margin-right: 10px;
+    path {
+      fill: #FFF;
+    }
+  }
+  .logoWrapper {
+    background: #F83645;
+    -webkit-box-shadow: inset -2px 0px 10px 0px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: inset -2px 0px 10px 0px rgba(0,0,0,0.05);
+      box-shadow: inset -2px 0px 10px 0px rgba(0,0,0,0.05);
+  }
+  .searchWrapper {
+    display: flex;
+    align-items: center;
+    > div {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+    input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #FA9096;
+      flex: 1;
+      font-weight: 600;
+    }
+    svg {
+      font-size: .85rem;
+      margin-top: 0;
+      path {
+        fill: #FA9096;
+      }
+    }
+  }
+}

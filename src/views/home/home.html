@@ -1,0 +1,17 @@
+<div class="container-fluid" :class="$style.wrapper">
+  <Header @searchTerm="searchMovies" :value="textValue" />
+  
+  <main class="row" :class="$style.mainWrapper">
+    <section class="col-2 p-0 text-left" :class="$style.mainMenu">
+        <Nav msg="" @category="getCategory" :activeStatus="active" v-if="fullMode" />
+    </section>
+    <section class="col-10 p-0" :class="$style.gfds">
+        <PageContent 
+          :category="movieCategory" 
+          :title="movieCategory" 
+          :searchTerm="query" 
+          @removeActive="removeActive"
+          @fullMode="fullDetail" />
+    </section>
+  </main>
+</div>
