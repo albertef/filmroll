@@ -2,7 +2,7 @@
 import Header from '@/components/Header/Header.vue';
 import Nav from '@/components/Nav/Nav.vue';
 import PageContent from '@/components/PageContent/PageContent.vue'
-import Home from './views/home/home.vue';
+import Pages from './views/pages/pages.vue';
 
 export default {
   name: 'App',
@@ -10,9 +10,9 @@ export default {
     Nav,
     Header,
     PageContent,
-    Home
+    Pages
   },
-  data: function() {
+  data: function () {
     return {
       movieCategory: this.category,
       query: "",
@@ -26,7 +26,7 @@ export default {
     searchTerm: String
   },
   methods: {
-    getCategory(e){
+    getCategory(e) {
       this.movieCategory = e;
       this.textValue = '';
     },
@@ -36,7 +36,7 @@ export default {
     removeActive(e) {
       this.active = e;
     },
-    fullDetail(e){
+    fullDetail(e) {
       this.fullMode = e;
     }
   }

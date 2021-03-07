@@ -1,11 +1,13 @@
 <div :class="$style.pageContent">
   <div v-if="movies.length">
     <div :class="$style.pageWrapper" class="row p-4" v-if="!fullMode">
-      <div class="col-12 my-3 pb-3"><h2>{{catTitle}}</h2></div>
+      <div class="col-12 my-3 pb-3">
+        <h2>{{catTitle}}</h2>
+      </div>
       <section class="col-2 p-3 text-center" v-for="movie in movies">
         <div :class="$style.elements" class="text-left" @click="e => getFullDetails(e, movie)">
           <span :class="$style.rating">{{movie.vote}}</span>
-          <img :src="'https://image.tmdb.org/t/p/w342' + movie.poster"  class="img-fluid" v-if="movie.poster"/>
+          <img :src="'https://image.tmdb.org/t/p/w342' + movie.poster" class="img-fluid" v-if="movie.poster" />
           <div :class="$style.noImage" v-else>
             <img src="../../assets/no-image.png">
           </div>
@@ -16,17 +18,19 @@
     </div>
 
     <div :class="$style.pageWrapper" v-else class="row">
-      <font-awesome-icon icon="times" :class="$style.backToList" @click="backToMovieList()"/>
+      <font-awesome-icon icon="times" :class="$style.backToList" @click="backToMovieList()" />
       <section class="col-12 text-center">
         <div :class="[$style.elements, $style.fullMode]" class="text-left">
           <div :class="$style.movieHeader">
-            <img :src="'https://image.tmdb.org/t/p/original' + fullMovieContent.backdrop_path"  class="img-fluid" v-if="fullMovieContent.backdrop_path"/>
+            <img :src="'https://image.tmdb.org/t/p/original' + fullMovieContent.backdrop_path" class="img-fluid"
+              v-if="fullMovieContent.backdrop_path" />
             <div :class="$style.noImage" v-else>
               <img src="../../assets/no-image.png">
             </div>
             <div class="row" :class="$style.movieTitle">
               <div class="offset-md-1 col-2">
-                <img :src="'https://image.tmdb.org/t/p/w342' + fullMovieContent.poster_path"  class="img-fluid" v-if="fullMovieContent.poster_path"/>
+                <img :src="'https://image.tmdb.org/t/p/w342' + fullMovieContent.poster_path" class="img-fluid"
+                  v-if="fullMovieContent.poster_path" />
                 <div :class="$style.noImage" v-else>
                   <img src="../../assets/no-image.png">
                 </div>
@@ -58,21 +62,23 @@
                 <p :class="$style.character">{{ cast.character }}</p>
               </div>
             </div>
-            <Modal v-show="isModalVisible" @close="closeModal" >
-              <template v-slot:header><span v-if="fullCast && fullCast.person">{{ personDetails.name }}</span></template>
+            <Modal v-show="isModalVisible" @close="closeModal">
+              <template v-slot:header><span
+                  v-if="fullCast && fullCast.person">{{ personDetails.name }}</span></template>
               <template v-slot:body>
                 <div class="row" v-if="fullCast && fullCast.person">
                   <div class="col-4">
-                      <div :class="$style.castImageContainer" v-if="fullCast.person.profile_path">
-                        <img :src="'https://image.tmdb.org/t/p/w500' + fullCast.person.profile_path" class="img-fluid" />
-                      </div>
-                      <div :class="$style.noImage" v-else>
-                        <img src="../../assets/no-image.png">
-                      </div>
+                    <div :class="$style.castImageContainer" v-if="fullCast.person.profile_path">
+                      <img :src="'https://image.tmdb.org/t/p/w500' + fullCast.person.profile_path" class="img-fluid" />
+                    </div>
+                    <div :class="$style.noImage" v-else>
+                      <img src="../../assets/no-image.png">
+                    </div>
                   </div>
                   <div class="col-8" :class="$style.personDetails">
                     <h2>{{ personDetails.name }}</h2>
-                    <h6 v-if="personDetails.birthday">Born: {{ personDetails.birthday }} <span v-if="personDetails.place_of_birth">at {{ personDetails.place_of_birth }}</span></h6>
+                    <h6 v-if="personDetails.birthday">Born: {{ personDetails.birthday }} <span
+                        v-if="personDetails.place_of_birth">at {{ personDetails.place_of_birth }}</span></h6>
                     <p class="my-4 pr-3">{{ personDetails.biography }}</p>
                   </div>
                 </div>
@@ -80,20 +86,20 @@
             </Modal>
           </article>
           <article class="col-3 mt-3">
-              <aside :class="$style.rightPanel" v-if="videos && videos.length" class="pb-3">
-                <h2 class="py-3 px-4">Videos</h2>
-                <div v-for="video in videos" class="px-4 py-2">
-                  <iframe height="100%" width="100%" :src="'https://www.youtube.com/embed/' + video.key" crossorigin="anonymous"></iframe> 
-                </div>
-              </aside>
+            <aside :class="$style.rightPanel" v-if="videos && videos.length" class="pb-3">
+              <h2 class="py-3 px-4">Videos</h2>
+              <div v-for="video in videos" class="px-4 py-2">
+                <iframe height="100%" width="100%" :src="'https://www.youtube.com/embed/' + video.key"
+                  crossorigin="anonymous"></iframe>
+              </div>
+            </aside>
           </article>
         </div>
       </section>
     </div>
   </div>
 
-  <div :class="$style.pageWrapper" class="row p-4" v-else>
-      <SkeletonLoader v-for="index in 20" :key="index"></SkeletonLoader>
+  <div :class="$style.pageWrapper" class="row p-4 mt-5 pt-5" v-else>
+    <SkeletonLoader v-for="index in 20" :key="index"></SkeletonLoader>
   </div>
 </div>
- 

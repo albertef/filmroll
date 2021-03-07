@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "@/views/home/home.vue";
+import Pages from "@/views/pages/pages.vue";
 import About from "@/views/about/about.vue";
 import NowPlaying from "@/views/now-playing/now-playing.vue";
 import Popular from "@/views/popular/popular.vue";
@@ -13,9 +13,9 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "Pages",
     redirect: "/now-playing",
-    component: Home,
+    component: Pages,
     children: [
       {
         path: "/now-playing",
@@ -49,6 +49,10 @@ const routes = [
     name: "About",
     component: About
   },
+  {
+    path: "*",
+    redirect: "/now-playing",
+  }
 ];
 
 const router = new VueRouter({
