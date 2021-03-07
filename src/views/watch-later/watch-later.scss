@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&display=swap');
+
+body {
+  overflow: hidden;
+}
+.wrapper {
+  font-family: 'Archivo', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  background: #222B30;
+  min-height: 100vh;
+  main {
+    height: calc(100vh - 57px);
+    .mainMenu {
+      background: #191D20;
+      -webkit-box-shadow: inset -2px 0px 10px 0px rgba(0,0,0,0.25);
+      -moz-box-shadow: inset -2px 0px 10px 0px rgba(0,0,0,0.25);
+      box-shadow: inset -2px 0px 10px 0px rgba(0,0,0,0.25);
+    }
+  }
+}
+::placeholder {
+  color: #FA9096;
+}
+:-ms-input-placeholder {
+  color: #FA9096;
+}
+::-ms-input-placeholder { 
+  color: #FA9096;
+}

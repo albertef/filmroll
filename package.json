@@ -1,11 +1,13 @@
 {
   "name": "filmroll",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "Albert Francis - albertef@gmail.com",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "clean": "vue-cli-service clean"
   },
   "dependencies": {
     "core-js": "^3.6.5",

@@ -9,6 +9,7 @@
   .elements {
     &:not(.fullMode) {
       cursor: pointer;
+      min-height: 300px;
     }
     transition: .3s ease;
     img {
@@ -57,7 +58,7 @@
     &.fullMode {
       .movieHeader {
         position: relative;
-        
+
         > img {
           max-height: 750px;
           min-height: 750px;
@@ -126,7 +127,7 @@
       font-weight: 600;
       margin: 1.3rem 0;
     }
-    
+
     .castContainer {
       p {
         font-size: .85rem;

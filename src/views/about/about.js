@@ -1,31 +1,31 @@
-import Header from '@/components/Header/Header.vue';
-import Nav from '@/components/Nav/Nav.vue';
-import PageContent from '@/components/PageContent/PageContent.vue'
+import Header from "@/components/Header/Header.vue";
+import Nav from "@/components/Nav/Nav.vue";
+import PageContent from "@/components/PageContent/PageContent.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Nav,
     Header,
     PageContent
   },
-  data: function() {
+  data() {
     return {
       movieCategory: this.category,
       query: "",
       active: false,
-      textValue: '',
+      textValue: "",
       fullMode: true
-    }
+    };
   },
   props: {
     category: String,
     searchTerm: String
   },
   methods: {
-    getCategory(e){
+    getCategory(e) {
       this.movieCategory = e;
-      this.textValue = '';
+      this.textValue = "";
     },
     searchMovies(e) {
       this.query = e;
@@ -33,8 +33,8 @@ export default {
     removeActive(e) {
       this.active = e;
     },
-    fullDetail(e){
+    fullDetail(e) {
       this.fullMode = e;
     }
   }
-}
+};

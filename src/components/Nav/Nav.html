@@ -1,12 +1,33 @@
 <div :class="$style.navItems" class="mt-5 ">
   <ul>
-    <li><a href="#" :class="active === 'now_playing' ? $style.active : null" @click="getMovieCategory('now_playing')">Now Playing <font-awesome-icon icon="long-arrow-alt-right" /></a></li>
-    <li><a href="#" :class="active === 'popular' ? $style.active : null" @click="getMovieCategory('popular')">Popular <font-awesome-icon icon="long-arrow-alt-right" /></a></li>
-    <li><a href="#" :class="active === 'top_rated' ? $style.active : null" @click="getMovieCategory('top_rated')">Top Rated <font-awesome-icon icon="long-arrow-alt-right" /></a></li>
-    <li><a href="#" :class="active === 'upcoming' ? $style.active : null" @click="getMovieCategory('upcoming')">Upcoming <font-awesome-icon icon="long-arrow-alt-right" /></a></li>
-    <li><a href="#">Watch Later <font-awesome-icon icon="long-arrow-alt-right" /></a></li>
+    <li>
+      <router-link to="/now-playing">Now Playing
+        <font-awesome-icon icon="long-arrow-alt-right" />
+      </router-link>
+    </li>
+    <li>
+      <router-link to="/popular">Popular
+        <font-awesome-icon icon="long-arrow-alt-right" />
+      </router-link>
+    </li>
+    <li>
+      <router-link to="/top-rated">Top Rated
+        <font-awesome-icon icon="long-arrow-alt-right" />
+      </router-link>
+    </li>
+    <li>
+      <router-link to="/upcoming">Upcoming
+        <font-awesome-icon icon="long-arrow-alt-right" />
+      </router-link>
+    </li>
+    <!-- <li>
+      <router-link to="/watch-later">Watch Later
+        <font-awesome-icon icon="long-arrow-alt-right" />
+      </router-link>
+    </li> -->
   </ul>
-  <ul v-if="active === false" class="mt-5">
-    <li><a href="#" :class="active === false ? $style.active : null" >Search Results <font-awesome-icon icon="long-arrow-alt-right" /></a></li>
-  </ul>
+  <!-- <ul v-if="active === false" class="mt-5">
+    <li><a href="#" :class="active === false ? $style.active : null">Search Results
+        <font-awesome-icon icon="long-arrow-alt-right" /></a></li>
+  </ul> -->
 </div>
