@@ -79,7 +79,7 @@ export default {
       this.movieTitle = this.getMovieTitle(this.fullMovieContent);
     },
     async backToMovieList() {
-      this.movies = await getMovies(this.getMovieCategory);
+      this.getMovies;
       this.fullMode = false;
       this.fullMovieContent = [];
       this.casts = {};
