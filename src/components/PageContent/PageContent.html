@@ -28,17 +28,16 @@
               <img src="../../assets/no-image.png">
             </div>
             <div class="row" :class="$style.movieTitle">
-              <div class="offset-md-1 col-2">
+              <div class="offset-1 col-md-2 col-4">
                 <img :src="'https://image.tmdb.org/t/p/w342' + fullMovieContent.poster_path" class="img-fluid"
                   v-if="fullMovieContent.poster_path" />
                 <div :class="$style.noImage" v-else>
                   <img src="../../assets/no-image.png">
                 </div>
               </div>
-              <div class="col-9">
+              <div class="col-md-9 col-7">
                 <h4 class="my-2">{{ movieTitle }}</h4>
                 <h6><span>{{ genres }}</span></h6>
-                <h6>{{ fullMovieContent }}</h6>
               </div>
             </div>
           </div>
@@ -46,13 +45,14 @@
       </section>
       <section class="col-12 my-5" :class="$style.movieDetailSection">
         <div class="row">
-          <article class="offset-md-1 col-7">
+          <article class="offset-1 col-md-7 col-10">
             <h2>Synopsis</h2>
             <p>{{ fullMovieContent.overview }}</p>
 
             <h2 class="mt-5">Cast</h2>
             <div class="row" :class="$style.castContainer">
-              <div v-for="cast in casts.cast" class="col-2 py-3" @click="getCastDetails(cast.credit_id)">
+              <div v-for="cast in casts.cast" class="col-lg-2 col-md-3 col-sm-4 col-6 py-3"
+                @click="getCastDetails(cast.credit_id)">
                 <div :class="$style.castImageContainer" v-if="cast.profile_path">
                   <img :src="'https://image.tmdb.org/t/p/w185' + cast.profile_path" class="img-fluid" />
                 </div>
@@ -86,7 +86,7 @@
               </template>
             </Modal>
           </article>
-          <article class="col-3 mt-3">
+          <article class="offset-1 offset-md-0 col-md-3 col-10 mt-3 mb-5">
             <aside :class="$style.rightPanel" v-if="videos && videos.length" class="pb-3">
               <h2 class="py-3 px-4">Videos</h2>
               <div v-for="video in videos" class="px-4 py-2">
