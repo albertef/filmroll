@@ -2,10 +2,10 @@
   <Header />
 
   <main class="row" :class="$style.mainWrapper">
-    <section class="col-2 p-0 text-left" :class="$style.mainMenu">
+    <section class="col-md-2 col-sm-12 p-0 text-left" :class="$style.mainMenu">
       <Nav msg="" />
     </section>
-    <section class="col-10 p-0">
+    <section class="col-md-10 col-sm-12 p-0">
       <transition>
         <router-view id="page-content" />
       </transition>
