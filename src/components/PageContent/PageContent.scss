@@ -180,8 +180,14 @@
         font-size: 1.4rem;
         margin: 0;
       }
+      img {
+        cursor: pointer;
+      }
       iframe{
         border: 1px solid #666;
+      }
+      div[aria-describedby*="modalDescription"] {
+        max-width: 1000px;
       }
     }
 

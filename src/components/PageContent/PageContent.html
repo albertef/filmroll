@@ -78,8 +78,9 @@
                   </div>
                   <div class="col-8" :class="$style.personDetails">
                     <h2>{{ personDetails.name }}</h2>
-                    <h6 v-if="personDetails.birthday">Born: {{ personDetails.birthday }} <span
-                        v-if="personDetails.place_of_birth">at {{ personDetails.place_of_birth }}</span></h6>
+                    <h6 v-if="personDetails.birthday">Born: {{ personDetails.birthday }}
+                      <span v-if="personDetails.place_of_birth">at {{ personDetails.place_of_birth }}</span>
+                    </h6>
                     <p class="my-4 pr-3">{{ personDetails.biography }}</p>
                   </div>
                 </div>
@@ -90,8 +91,18 @@
             <aside :class="$style.rightPanel" v-if="videos && videos.length" class="pb-3">
               <h2 class="py-3 px-4">Videos</h2>
               <div v-for="video in videos" class="px-4 py-2">
-                <iframe height="100%" width="100%" :src="'https://www.youtube.com/embed/' + video.key"
-                  crossorigin="anonymous"></iframe>
+                <p class="pt-3 mb-0">{{video.name}}</p>
+                <img :src="`https://img.youtube.com/vi/${video.key}/hqdefault.jpg`" class="img-fluid"
+                  @click="showVideoModal(video)">
+                <Modal v-show="isVideoModalVisible" @close="closeVideoModal">
+                  <template v-slot:header><span
+                      v-if="video.name">{{ videoDetails.name }}</span></template>
+                  <template v-slot:body>
+                    <iframe height="500px" width="100%"
+                      :src="`https://www.youtube.com/embed/${videoDetails.key}?autoplay=1`"
+                      crossorigin="anonymous" allow="autoplay"></iframe>
+                  </template>
+                </Modal>
               </div>
             </aside>
           </article>

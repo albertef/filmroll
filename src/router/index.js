@@ -41,7 +41,7 @@ const routes = [
         path: "/watch-later",
         name: "Watch Later",
         component: WatchLater
-      },
+      }
     ]
   },
   {
@@ -51,7 +51,7 @@ const routes = [
   },
   {
     path: "*",
-    redirect: "/now-playing",
+    redirect: "/now-playing"
   }
 ];
 

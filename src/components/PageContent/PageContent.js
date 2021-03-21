@@ -20,9 +20,9 @@ export default {
     Modal
   },
   props: {
-    title: String,
+    title: String
   },
-  data: function () {
+  data: () => {
     return {
       movies: [],
       genres: "",
@@ -33,8 +33,10 @@ export default {
       videos: {},
       movieTitle: "",
       isModalVisible: false,
+      isVideoModalVisible: false,
       fullCast: {},
-      personDetails: {}
+      personDetails: {},
+      videoDetails: {}
     };
   },
   async created() {
@@ -107,6 +109,14 @@ export default {
       this.fullCast = {};
       this.personDetails = {};
       this.isModalVisible = false;
+    },
+    showVideoModal(video) {
+      this.isVideoModalVisible = true;
+      this.videoDetails = video;
+    },
+    closeVideoModal() {
+      this.isVideoModalVisible = false;
+      this.videoDetails = {};
     }
   }
 };
